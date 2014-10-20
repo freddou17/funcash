@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<storage>
+	<templates>
+		<templateAfficherParticipant>
+		   <![CDATA[<li>
+		   					<a href="#" onclick="javascript:goToDetaislPart('!nom!','!valeur!','!impaye!')"><span>!nom!:total:!valeur!€ - non-payé: !impaye!€</span></a>
+		   				</li>
+					]]>
+		</templateAfficherParticipant>
+		<templateAfficherLigneSanction>
+		   <![CDATA[
+		   			<div class="ui-block-a">
+						<div class="ui-grid-b ui-responsive my-breakpoint-sanction">
+							<div class="ui-block-a">
+								<a onclick="ajouterSanction('!valeurSanction!')" href="#" class="ui-shadow ui-btn ui-corner-all ui-btn-icon-left ui-icon-plus ui-btn-icon-notext"></a>
+							</div>
+							<div class="ui-block-b">
+								<a href="#" class="ui-shadow ui-btn ui-corner-all">!titreSanction!€</a>
+							</div>
+							<div class="ui-block-c">
+							    	<a onclick="retirerSanction('!valeurSanction!')" href="#" style="float: right;" class="ui-shadow ui-btn ui-corner-all ui-btn-icon-right ui-icon-minus ui-btn-icon-notext"></a>
+							</div>
+						</div>
+					</div>
+				    ]]>
+		</templateAfficherLigneSanction>
+		<templateTotalImpaye>
+		    <![CDATA[<div class="ui-block-b">
+							<a href="#" class="ui-btn ui-corner-all">20€</a>
+						</div>]]>
+		</templateTotalImpaye>	    
+	</templates>
+</storage>
+

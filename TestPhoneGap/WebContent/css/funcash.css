@@ -1,0 +1,102 @@
+.title {
+	background-color: grey;
+	border-top: 1px solid #919192;
+	height: 50px;
+	left: 0;
+	top: 0;
+	width: 100%;
+	z-index: 1;
+}
+
+.title h1 {
+	margin-left: 20px;
+	text-align: left;
+}
+
+.title h1>a {
+	color: #F6F4F2;
+	font-size: 18px;
+	font-weight: normal;
+	line-height: 32px;
+	margin: 0;
+	text-align: center;
+	text-shadow: 0 -1px 1px #222222;
+}
+
+#imgWelcome {
+	background: url(../img/caisseNoire.jpg) no-repeat center top;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	height: 50px;
+	width: 225px;
+	text-align: center;
+	padding: 180px 0px 0px 0px;
+	margin: -115px 0px 0px -112px;
+}
+
+img.center {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+@media screen and (min-width: 320px) {
+	.my-breakpoint-sanction .ui-block-a {width: 100%; float: left;}
+	.my-breakpoint-sanction.ui-grid-b .ui-block-a {width: 5.925%;}
+	.my-breakpoint-sanction.ui-grid-b .ui-block-b {width: 46.950%; margin: 0px 60px; float: left;}
+	.my-breakpoint-sanction.ui-grid-b .ui-block-c {width: 5.925%; float: left;}
+	
+	
+}
+
+@media screen and (min-width: 480px) {
+	.my-breakpoint-sanction .ui-block-a {width: 100%; float: left;}
+	.my-breakpoint-sanction.ui-grid-b .ui-block-a {width: 5.925%;}
+	.my-breakpoint-sanction.ui-grid-b .ui-block-b {width: 60.950%; margin: 0px 60px; float: left;}
+	.my-breakpoint-sanction.ui-grid-b .ui-block-c {width: 5.925%; float: left;}
+	
+	
+}
+
+
+/* 2: min-width */
+@media screen and (min-width: 768px) {
+	.my-breakpoint.ui-grid-a .ui-block-a { width: 49.950%; }
+	.my-breakpoint.ui-grid-a .ui-block-b,
+	.my-breakpoint.ui-grid-a .ui-block-c { width: 24.925%; }
+	
+	.my-breakpoint-encaisser.ui-grid-a .ui-block-a {width: 74.875%}
+	
+	.my-breakpoint-sanction.ui-grid-b .ui-block-a {width: 5.925%;}
+	.my-breakpoint-sanction.ui-grid-b .ui-block-b {width: 75.95%; margin: 0px 40px;}
+	.my-breakpoint-sanction.ui-grid-b .ui-block-c {width: 5.925%;}
+}
+
+@media screen and (min-width: 1200px) {
+	.my-breakpoint.ui-grid-a .ui-block-a { width: 49.950%; }
+	.my-breakpoint.ui-grid-a .ui-block-b,
+	.my-breakpoint.ui-grid-a .ui-block-c { width: 24.925%; }
+	
+	.my-breakpoint-encaisser.ui-grid-a .ui-block-a {width: 74.875%}
+	
+	.my-breakpoint-sanction.ui-grid-b .ui-block-a {width: 5.925%;}
+	.my-breakpoint-sanction.ui-grid-b .ui-block-b {width: 32%; margin: 0px 40px;}
+	.my-breakpoint-sanction.ui-grid-b .ui-block-c {width: 5.925%;}
+}
+
+@media screen and (min-width: 1900px) {
+	.my-breakpoint.ui-grid-a .ui-block-a { width: 49.950%; }
+	.my-breakpoint.ui-grid-a .ui-block-b,
+	.my-breakpoint.ui-grid-a .ui-block-c { width: 24.925%; }
+	
+	.my-breakpoint-encaisser.ui-grid-a .ui-block-a {width: 74.875%}
+	
+	.my-breakpoint-sanction.ui-grid-b .ui-block-a {width: 5.925%;}
+	.my-breakpoint-sanction.ui-grid-b .ui-block-b {width: 75.95%; margin: 0px 40px;}
+	.my-breakpoint-sanction.ui-grid-b .ui-block-c {width: 5.925%;}
+}
+
+
+
+
