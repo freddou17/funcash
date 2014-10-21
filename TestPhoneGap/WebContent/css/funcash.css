@@ -41,6 +41,19 @@ img.center {
 	margin-right: auto;
 }
 
+.cercle {
+    background: none repeat scroll 0 0 #bfe1dc;
+    border: 10px solid #8e9191;
+    border-radius: 50%;
+    font-size: 20px;
+    height: 160px;
+    line-height: 160px;
+    margin-left: 30%;
+    margin-top: 10%;
+    text-align: center;
+    width: 160px;
+}
+
 @media screen and (min-width: 320px) {
 	.my-breakpoint-sanction .ui-block-a {width: 100%; float: left;}
 	.my-breakpoint-sanction.ui-grid-b .ui-block-a {width: 5.925%;}
