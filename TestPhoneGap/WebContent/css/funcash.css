@@ -1,3 +1,19 @@
+.degradeAccueil{
+	background-image:linear-gradient(60deg, black, #A9A8A1 33%, #E5C10E 64%);
+}
+
+.contentaccueil{
+	margin-top: 5%;
+}
+
+.btnEncaisser{
+	
+}
+
+.blockaccueil{
+	margin-top: 5%;
+}
+
 .title {
 	background-color: grey;
 	border-top: 1px solid #919192;
@@ -42,14 +58,13 @@ img.center {
 }
 
 .cercle {
-    background: none repeat scroll 0 0 #bfe1dc;
-    border: 10px solid #8e9191;
+    background: none repeat scroll 0 0 #cccccc;
+    border: 10px solid #707070;
     border-radius: 50%;
     font-size: 20px;
     height: 160px;
     line-height: 160px;
-    margin-left: 30%;
-    margin-top: 10%;
+    margin: auto auto auto auto;
     text-align: center;
     width: 160px;
 }
@@ -109,7 +124,4 @@ img.center {
 	.my-breakpoint-sanction.ui-grid-b .ui-block-b {width: 75.95%; margin: 0px 40px;}
 	.my-breakpoint-sanction.ui-grid-b .ui-block-c {width: 5.925%;}
 }
-
-
-
 

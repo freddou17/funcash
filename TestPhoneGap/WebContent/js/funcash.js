@@ -5,9 +5,9 @@ function initStorage(){
 	var listeParticipants = localStorage.getItem("listeParticipants");
 	listeParticipants = { "participants" : [
 				{"pseudo": "fred", "total": 20, "impaye": 0},
-				{"pseudo": "fred", "total": 20, "impaye": 0},
-				{"pseudo": "vince", "total": 20,"impaye": 0},
-				{"pseudo": "anis", "total": 20, "impaye": 0}
+				{"pseudo": "fred2", "total": 20, "impaye": 1},
+				{"pseudo": "vince", "total": 20,"impaye": 4},
+				{"pseudo": "anis", "total": 20, "impaye": 5}
 			]
 	};
 	var listeSanctions = localStorage.getItem("listeSanctions");
@@ -21,7 +21,7 @@ function initStorage(){
 	localStorage.setItem("listeSanctions", JSON.stringify(listeSanctions));
 }
 
-function creerListeParticipants(){
+function creerDetailsEtParticipants(){
 	$.ajax({
     	type: "GET",
 	    url: "storage.xml",
@@ -44,6 +44,9 @@ function creerTplParticipant(xml){
 	var tplParticipant = $(xml).find("templateAfficherParticipant").text();
 	var listeParticipants = jQuery.parseJSON(localStorage.getItem("listeParticipants"));
 	$("#ulParticipants").html("");
+	var totalComplete = 0;
+	var ssTotEncaisse = 0;
+	var ssTotImpaye = 0;
 	$.each(listeParticipants.participants,function(key, val){
 		 var pseudo = $(this)[0].pseudo.toUpperCase();
 		 var valTotale = $(this)[0].total;
@@ -51,8 +54,13 @@ function creerTplParticipant(xml){
 	     var idPart = pseudo;
 	     strDom = replaceTemplateParticipant(idPart, pseudo, valTotale, valImpaye, tplParticipant);
 	     $("#ulParticipants").append(strDom);
+	     ssTotEncaisse += valTotale;
+	     ssTotImpaye += valImpaye;
 	});
-	$('#ulParticipants').listview().listview("refresh");
+	$("#ulParticipants").listview().listview("refresh");
+	$("#totalComplete").html(parseInt(ssTotEncaisse) + parseInt(ssTotImpaye));
+	$("#ssTotalEncaisse").html(ssTotEncaisse);
+	$("#ssTotalimpaye").html(ssTotImpaye);
 }
 
 
@@ -189,6 +197,15 @@ function encaisserParticipant(){
  * 
  */
 function showForm(idForm){
+	if(idForm == "formS"){
+		var listeSanctions = JSON.parse(localStorage.getItem("listeSanctions"));
+		listeSanctions.sanctions.push({"libelle": $("#libSanc").val(), "valeur": $("#valSanc").val()})
+		localStorage.setItem("listeSanctions", JSON.stringify(listeSanctions));
+	}else if(idForm == "formP"){
+		var listeParticipants = JSON.parse(localStorage.getItem("listeParticipants"));
+		listeParticipants.participants.push({"pseudo": $("#part").val(), "total": 0, "impaye": 0})
+		localStorage.setItem("listeParticipants", JSON.stringify(listeParticipants));
+	}
 	$("#"+idForm).show();
 }
 /**
@@ -206,7 +223,7 @@ function addNelleSanction(idForm){
 		localStorage.setItem("listeParticipants", JSON.stringify(listeParticipants));
 	}
 	$("#popupMenu").popup("close");
-	creerListeParticipants();
+	creerDetailsEtParticipants();
 }
 
 

@@ -9,65 +9,96 @@
 	href="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.css" />
 <link rel="stylesheet" type="text/css" href="css/index.css" />
 <link rel="stylesheet" type="text/css" href="css/funcash.css" />
+<link rel="stylesheet" type="text/css" href="css/themes/funcashtheme.css" />
+<link rel="stylesheet" type="text/css" href="css/themes/jquery.mobile.icons.min.css" />
 <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 <script
 	src="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.js"></script>
 <title>FunCash</title>
 </head>
 <body>
-	<div data-role="page" id="welcome">
+	<div class="degradeAccueil" data-role="page" id="welcome">
 		<div data-role="header">
-			<h1>FUNCASH</h1>
+			<h2 style="font-size: 2em;">FUNCASH</h2>
 		</div>
-		<div data-role="content">
-			<div class="ui-grid-b">
-				<div class="ui-block-a ">
-					<div class="cercle">My FunCash</div>
+		<div class="contentaccueil" data-role="content">
+			<div class="ui-grid-b ui-responsive">
+				<div class="blockaccueil ui-block-a ">
+					<div class="cercle">
+						<a href="#detailsEtParticipants">My FunCash</a>
+					</div>
 				</div>
-				<div class="ui-block-b ">
-					<div class="cercle">My FunCash</div>
+				<div class="blockaccueil ui-block-b ">
+					<div class="cercle">
+						<a href="#">Options</a>
+					</div>
 				</div>
-				<div class="ui-block-c">
-					<div class="cercle">My FunCash</div>
+				<div class="blockaccueil ui-block-c">
+					<div class="cercle">
+						<a href="#">...in work</a>
+					</div>
 				</div>
 			</div>
-				
-<!-- 				<p class="event listening"> -->
-<!-- 					<a href="#listeParticipants">Entrer</a> -->
-<!-- 				</p> -->
-<!-- 				<p class="event received"> -->
-<!-- 					<a href="#listeParticipants">Entrer</a> -->
-<!-- 				</p> -->
+
+			<!-- 				<p class="event listening"> -->
+			<!-- 					<a href="#detailsEtParticipants">Entrer</a> -->
+			<!-- 				</p> -->
+			<!-- 				<p class="event received"> -->
+			<!-- 					<a href="#detailsEtParticipants">Entrer</a> -->
+			<!-- 				</p> -->
 		</div>
-		<div data-role="footer" data-position="fixed">
-			<h1>FUNCASH</h1>
-		</div>
+		<div style="font-size: 2em;" data-role="footer" data-position="fixed"></div>
 		<!-- 		<script type="text/javascript" src="cordova.js"></script> -->
 		<script type="text/javascript" src="js/index.js"></script>
 		<script type="text/javascript" src="js/funcash.js"></script>
 		<!-- 	    <script type="text/javascript"> -->
 		<!--  	            app.initialize(); -->
 		<!-- 	    </script> -->
-	
+
 
 	</div>
-	<div data-role="page" id="listeParticipants">
+	<div data-role="page" id="detailsEtParticipants">
 		<div style="font-size: 16px" data-role="header">
-			<h1>Participants</h1>
-			<a href="#popupMenu" data-position-to="window" data-rel="popup" data-transition="slideup"
+			<h2>Totaux et Participants</h2>
+			<input type="hidden" id="partSelected" /> <a
+				href="#welcome" class="ui-btn-left">Back</a>
+			<a href="#popupMenu" data-position-to="window" data-rel="popup"
+				data-transition="slideup"
 				class="ui-btn-a ui-btn ui-btn-right ui-shadow ui-corner-all ui-icon-gear ui-btn-icon-notext">Options</a>
 		</div>
 		<div id="zoneParticipant" data-role="content">
+			<ul data-role="listview" class="ui-corner-all" data-inset="true">
+			    <li>
+			    	<div class="ui-grid-a">
+					    <div class="ui-block-a">Total</div>
+					    <div id="totalComplete" class="ui-block-b"></div>
+					</div>	
+			    </li>
+			    <li>
+			    	<div class="ui-grid-a">
+					    <div class="ui-block-a">Sous-total encaissé</div>
+					    <div id="ssTotalEncaisse" class="ui-block-b"></div>
+					</div>	
+			    </li>
+			    <li>
+			    	<div class="ui-grid-a">
+					    <div class="ui-block-a">Sous-total impayé</div>
+					    <div id="ssTotalimpaye" class="ui-block-b"></div>
+					</div>
+				</li>
+			</ul>
 			<ul id="ulParticipants" data-role="listview" data-inset="true"></ul>
 		</div>
+		<div data-role="footer" data-position="fixed"></div>
 	</div>
 	<div data-role="page" id="detailsParticipant">
 		<div style="font-size: 16px" data-role="header">
-			<h1 id="titlePart">Les comptes de !part!</h1>
+			<h2 id="titlePart">Les comptes de !part!</h2>
 			<input type="hidden" id="partSelected" /> <a
-				href="#listeParticipants" class="ui-btn-left">Back</a> <a
-				href="index.html"
-				class="ui-btn ui-btn-right ui-shadow ui-corner-all ui-icon-gear ui-btn-icon-notext">Options</a>
+				href="#detailsEtParticipants" class="ui-btn-left">Back</a> 
+				<a href="#popupMenu" data-position-to="window" data-rel="popup"
+				data-transition="slideup"
+				class="ui-btn-a ui-btn ui-btn-right ui-shadow ui-corner-all ui-icon-gear ui-btn-icon-notext">Options</a>
 		</div>
 		<div data-role="content">
 			<div class="ui-grid-a">
@@ -77,24 +108,26 @@
 				<div class="ui-block-b">
 					<div class="ui-grid-a my-breakpoint">
 						<div class="ui-block-a">
-							<a href="#" class="ui-btn ui-corner-all">Total:</a>
+							<h2 style=" text-align: center;" class="ui-body ui-body-a ui-corner-all">Total:</h2>
 						</div>
 						<div class="ui-block-b">
-							<a id="tot" href="#" class="ui-btn ui-corner-all">20€</a>
+							<h2 style=" text-align: center;" class="ui-body ui-body-a ui-corner-all" id="tot"></h2>
 						</div>
 					</div>
 					<div class="ui-grid-a my-breakpoint">
 						<div class="ui-block-a">
-							<a href="#" class="ui-btn ui-corner-all">Impayé:</a>
+							<h2 style="text-align: center;" class="ui-body ui-body-a ui-corner-all">Impayé:</h2>
 						</div>
 						<div class="ui-block-b">
-							<a id="impaye" href="#" class="ui-btn ui-corner-all">20€</a>
+							<h2 style=" text-align: center;" class="ui-body ui-body-a ui-corner-all" id="impaye"></h2>
 						</div>
 					</div>
 					<div class="ui-grid-a my-breakpoint-encaisser">
-						<div class="ui-block-a">
-							<a onclick="encaisserParticipant()" href="#"
-								class="ui-btn ui-corner-all">Encaisser</a>
+						<div class="ui-block-a" onclick="encaisserParticipant()">
+							<h2 style="text-align: center; background-color: #28D022" 
+								class="ui-body ui-body-a ui-corner-all">
+								Encaisser
+							</h2>
 						</div>
 					</div>
 				</div>
@@ -102,54 +135,58 @@
 
 			<div class="ui-grid-a ui-responsive">
 				<div class="ui-block-a">
-					<input data-icon="check" data-iconpos="right" value="Sanctions"
-						type="button">
+					<h2 style=" text-align: center;" class="ui-body ui-body-a ui-corner-all">Sanctions</h2>
 				</div>
 			</div>
 			<div id="zoneSanctions" class="ui-grid-a my-breakpoint-sanction">
 
 			</div>
 		</div>
+		<div data-role="footer" data-position="fixed"></div>
 	</div>
 
-	
-	<div data-theme="a" data-role="footer" data-position="fixed"></div>
-	
+
+
 	<div data-theme="a" id="popupMenu">
 		<ul data-role="listview" data-inset="true" style="min-width: 210px;">
 			<li data-role="list-divider">Menu</li>
-			<li data-icon="plus"><a href="#" onclick="showForm('formPart')">Ajouter un participant</a>
+			<li data-icon="plus"><a href="#" onclick="showForm('formPart')">Ajouter
+					un participant</a>
 				<div id="formPart" style="display: none;">
 					<form id="formP">
-				        <div style="padding:10px 20px;">
-				            <label for="part" class="ui-hidden-accessible">Nom du participant :</label>
-				            <input name="part" id="part" value="" placeholder="nom du participant" data-theme="a" type="text">
-				            <button type="button" data-theme="b" onclick="addNelleSanction('formP')" data-icon="check">Ajouter</button>
-				        </div>
-				    </form>
-				
-				</div>
-			</li>
-			<li data-icon="plus"><a href="#" onclick="showForm('formSanc')">Ajouter une sanction</a>
+						<div style="padding: 10px 20px;">
+							<label for="part" class="ui-hidden-accessible">Nom du
+								participant :</label> <input name="part" id="part" value=""
+								placeholder="nom du participant" data-theme="a" type="text">
+							<button type="button" data-theme="b"
+								onclick="addNelleSanction('formP')" data-icon="check">Ajouter</button>
+						</div>
+					</form>
+
+				</div></li>
+			<li data-icon="plus"><a href="#" onclick="showForm('formSanc')">Ajouter
+					une sanction</a>
 				<div id="formSanc" style="display: none;">
 					<form id="formS">
-				        <div style="padding:10px 20px;">
-				            <label for="libSanc" class="ui-hidden-accessible">Libelle sanction :</label>
-				            <input name="libSanc" id="libSanc" value="" placeholder="Libelle sanction" data-theme="a" type="text">
-				            <label for="valSanc" class="ui-hidden-accessible">Valeur sanction :</label>
-				            <input name="valSanc" id="valSanc" value="" placeholder="Valeur sanction :" data-theme="a" type="number">
-				            <button type="button" onclick="addNelleSanction('formS')" data-theme="b" data-icon="check">Ajouter</button>
-				        </div>
-				    </form>
-				</div>
-			</li>
+						<div style="padding: 10px 20px;">
+							<label for="libSanc" class="ui-hidden-accessible">Libelle
+								sanction :</label> <input name="libSanc" id="libSanc" value=""
+								placeholder="Libelle sanction" data-theme="a" type="text">
+							<label for="valSanc" class="ui-hidden-accessible">Valeur
+								sanction :</label> <input name="valSanc" id="valSanc" value=""
+								placeholder="Valeur sanction :" data-theme="a" type="number">
+							<button type="button" onclick="addNelleSanction('formS')"
+								data-theme="b" data-icon="check">Ajouter</button>
+						</div>
+					</form>
+				</div></li>
 		</ul>
 	</div>
 	<script type="text/javascript">
 		$(document).ready(function() {
 			$("#popupMenu").enhanceWithin().popup();
 			initStorage();
-			creerListeParticipants();
+			creerDetailsEtParticipants();
 		});
 	</script>
 </body>
