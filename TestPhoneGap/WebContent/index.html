@@ -30,7 +30,7 @@
 				</div>
 				<div class="blockaccueil ui-block-b ">
 					<div class="cercle">
-						<a href="#">Options</a>
+						<a href="#options">Options</a>
 					</div>
 				</div>
 				<div class="blockaccueil ui-block-c">
@@ -39,13 +39,6 @@
 					</div>
 				</div>
 			</div>
-
-			<!-- 				<p class="event listening"> -->
-			<!-- 					<a href="#detailsEtParticipants">Entrer</a> -->
-			<!-- 				</p> -->
-			<!-- 				<p class="event received"> -->
-			<!-- 					<a href="#detailsEtParticipants">Entrer</a> -->
-			<!-- 				</p> -->
 		</div>
 		<div style="font-size: 2em;" data-role="footer" data-position="fixed"></div>
 		<!-- 		<script type="text/javascript" src="cordova.js"></script> -->
@@ -144,7 +137,53 @@
 		</div>
 		<div data-role="footer" data-position="fixed"></div>
 	</div>
-
+	<div data-role="page" id="options">
+		<div style="font-size: 16px" data-role="header">
+			<h2>Options </h2>
+			<input type="hidden" id="partSelected" /> 
+			<a href="#welcome" class="ui-btn-left">Back</a>
+		</div>
+		<div id="listeChoixOptions" data-role="content">
+			<div class="ui-grid-a">
+				<div class="ui-block-a ">
+					<div class="ui-grid-a ui-body ui-body-a ui-corner-all optionsListes">
+						<label>Liste des sanctions</label>
+					</div>
+					<div class="ui-grid-b ui-body ui-body-a ui-corner-all optionsListes">
+						<div class="ui-block-a">
+							<input name="textinput-2" id="textinput-2" placeholder="ajouter sanction" value="" type="text">
+						</div>
+						<div class="ui-block-b">
+							<input name="textinput-2" id="textinput-2" placeholder="valeur sanction" value="" type="number">
+						</div>
+						<div class="ui-block-c">
+							<a href="index.html" class="ui-btn ui-shadow ui-corner-all ui-icon-plus ui-btn-icon-notext">Add</a>
+						</div>
+					</div>
+					<div class="ui-block-b">
+						
+					</div>
+				</div>
+				<div class="ui-block-b">
+					<div class="ui-grid-a ui-body ui-body-a ui-corner-all optionsListes">
+						<label>Liste des participants</label>
+					</div>
+					<div class="ui-grid-a ui-body ui-body-a ui-corner-all optionsListes">
+						<div class="ui-block-a ">
+							<input name="textinput-2" id="textinput-2" placeholder="ajouter participant" value="" type="text">
+						</div>
+						<div class="ui-block-b">
+							<a href="index.html" class="ui-btn ui-shadow ui-corner-all ui-icon-plus ui-btn-icon-notext">Add</a>					
+						</div>
+					</div>
+					<div class="ui-block-b">
+						
+					</div>
+				</div>
+			</div>
+		</div>
+		<div data-role="footer" data-position="fixed"></div>
+	</div>
 
 
 	<div data-theme="a" id="popupMenu">
